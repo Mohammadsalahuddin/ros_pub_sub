@@ -131,7 +131,8 @@ include_directories(
 # add_dependencies(perfomance_tests ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
- add_executable(perfomance_tests src/perfomance_tests.cpp)
+add_executable(perfomance_tests src/perfomance_tests.cpp)
+add_executable(perfomance_sub src/perfomance_sub.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
@@ -139,6 +140,10 @@ include_directories(
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(perfomance_tests
+   ${catkin_LIBRARIES}
+ )
+
+target_link_libraries(perfomance_sub
    ${catkin_LIBRARIES}
  )
 
